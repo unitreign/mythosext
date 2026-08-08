@@ -218,7 +218,7 @@ local ext = {
     name            = "NovelFire",
     site            = BASE,
     lang            = "en",
-    version         = "1.0.0",
+    version         = "1.1.0",
     supports_page_mode = true,  -- signals UI to show the Page Mode toggle
 }
 
@@ -335,7 +335,7 @@ function ext:parseNovelMeta(path)
         if not s then
             s = stats_block:match('icon%-book%-open[^<]*</i>%s*([%d,]+)')
         end
-        if s then total_chapters = tonumber(s:gsub(",", "")) or 0 end
+        if s then total_chapters = tonumber((s:gsub(",", ""))) or 0 end
     end
     logger.dbg("NovelFire: parseNovelMeta title=", title, "total_chapters=", total_chapters)
 

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "novelfire",
+    "name": "NovelFire",
+    "version": "1.0.0",
+    "lang": "en",
+    "site": "https://novelfire.net",
+    "description": "Browse and export novels from NovelFire.net",
+    "url": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/extensions/novelfire.lua"
+  }
+]

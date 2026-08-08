@@ -72,7 +72,7 @@ return ext
 
 ## What to read next
 
-- [api-reference.md](api-reference.md) — all methods, fields, and return shapes
-- [http.md](http.md) — how to make HTTP requests
-- [html-parsing.md](html-parsing.md) — parsing HTML with Lua patterns
-- [locked-chapters.md](locked-chapters.md) — handling paywalled chapters
+- [2-api-reference.md](2-api-reference.md) — all methods, fields, and return shapes
+- [3-html-parsing.md](3-html-parsing.md) — parsing HTML with Lua patterns
+- [4-http.md](4-http.md) — how to make HTTP requests
+- [5-locked-chapters.md](5-locked-chapters.md) — handling paywalled chapters

@@ -80,7 +80,7 @@ function ext:parseNovel(path)
 end
 ```
 
-`chapter_number` is optional but nice to have — Mythos shows it as "Ch.1" in the chapter list. `locked` is covered in [locked-chapters.md](locked-chapters.md).
+`chapter_number` is optional but nice to have — Mythos shows it as "Ch.1" in the chapter list. `locked` is covered in [5-locked-chapters.md](5-locked-chapters.md).
 
 **Status values:** `"Ongoing"`, `"Completed"`, `"Hiatus"`, `"Cancelled"`, `"Unknown"`
 
@@ -143,3 +143,7 @@ end
 ```
 
 Only implement this if your site paginates its chapter list. Set `ext.chapters_per_page = N` alongside it so Mythos can calculate which pages contain new chapters.
+
+---
+
+> See [3-html-parsing.md](3-html-parsing.md), [4-http.md](4-http.md), and [5-locked-chapters.md](5-locked-chapters.md) for implementation details.

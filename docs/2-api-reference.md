@@ -146,4 +146,31 @@ Only implement this if your site paginates its chapter list. Set `ext.chapters_p
 
 ---
 
+---
+
+## What Mythos currently uses
+
+The sections above describe the full extension contract. This section tells you what's actually wired up today so you know what to prioritize and what's safe to skip.
+
+### Fields
+
+| Field | Where | Used now |
+|---|---|---|
+| `name`, `cover`, `summary`, `author`, `status` | `parseNovel` / `parseNovelMeta` | Yes — shown on the detail screen |
+| `chapters` (name + path) | `parseNovel` | Yes — chapter list and export |
+| `locked` | chapter item | Yes — dims the row, warns on export |
+| `total_chapters` | `parseNovelMeta` | Yes — drives chapter cache delta |
+| `path` | `parseNovel` | Yes — used as the cache key |
+| `genres` | `parseNovel` | **No UI yet.** Parse it if it's on the same page and free to grab. Skip it if it needs an extra request. |
+| `totalPages` | `parseNovel` | **Not acted on.** Always return `1`. |
+| `chapter_number` | chapter item | **Not displayed.** Include it if it's free to extract; skip it if it adds complexity. |
+
+### Methods
+
+`popularNovels`, `searchNovels`, `parseNovel`, and `parseChapter` are always called. `parseNovelMeta` and `parsePage` are optional, but `parseNovelMeta` is worth implementing — it cuts re-opening a tracked novel down to 1 HTTP request.
+
+`options` in `popularNovels` is always an empty table. There is no filter UI yet, so ignore it — just keep it in the signature.
+
+---
+
 > See [3-html-parsing.md](3-html-parsing.md), [4-http.md](4-http.md), and [5-locked-chapters.md](5-locked-chapters.md) for implementation details.

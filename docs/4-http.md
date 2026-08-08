@@ -82,6 +82,34 @@ end
 
 KOReader writes these to its log file. Dbg lines are filtered out in normal use.
 
+## Decoding JSON extracted from HTML
+
+`http_get_json` decodes an entire HTTP response as JSON. But sometimes you extract a JSON string from inside an HTML page (e.g. a `window.variable = [...]` assignment) and need to decode just that part. Use a standalone helper:
+
+```lua
+local function json_decode(str)
+    local ok_j, JSON = pcall(require, "rapidjson")
+    if not ok_j then JSON = require("json") end
+    local ok, data = pcall(JSON.decode, str)
+    if not ok then return nil end
+    return data
+end
+```
+
+Use it after extracting the raw JSON string from the page:
+
+```lua
+local raw = html:match('window%.chapters%s*=%s*(%b[])')
+local data = raw and json_decode(raw)
+if data then
+    for _, item in ipairs(data) do
+        -- process item
+    end
+end
+```
+
+See [3-html-parsing.md](3-html-parsing.md) for the `%b[]` balanced-match technique.
+
 ## Cloudflare
 
 Sites protected by Cloudflare will sometimes return a challenge page instead of real content. The request may come back with code 200, but the body will contain the challenge HTML rather than the novel.

@@ -16,5 +16,14 @@
     "site": "https://www.royalroad.com",
     "description": "Browse and export original web fiction from Royal Road",
     "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/royalroad.lua"
+  },
+  {
+    "id": "webnovel",
+    "name": "WebNovel",
+    "version": "1.0.0",
+    "lang": "en",
+    "site": "https://www.webnovel.com",
+    "description": "Browse and export novels from WebNovel",
+    "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/webnovel.lua"
   }
 ]

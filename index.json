@@ -7,5 +7,14 @@
     "site": "https://novelfire.net",
     "description": "Browse and export novels from NovelFire.net",
     "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/novelfire.lua"
+  },
+  {
+    "id": "royalroad",
+    "name": "Royal Road",
+    "version": "1.0.0",
+    "lang": "en",
+    "site": "https://www.royalroad.com",
+    "description": "Browse and export original web fiction from Royal Road",
+    "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/royalroad.lua"
   }
 ]

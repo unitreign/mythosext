@@ -6,6 +6,6 @@
     "lang": "en",
     "site": "https://novelfire.net",
     "description": "Browse and export novels from NovelFire.net",
-    "url": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/extensions/novelfire.lua"
+    "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/novelfire.lua"
   }
 ]

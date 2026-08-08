@@ -1,6 +1,6 @@
 # mythosext
 
-Community extensions for [Mythos](https://github.com/unitreign/mythos) — a simple web novel library for KOReader. Browse, track and export your favourite stories as EPUBs to read offline.
+Extensions for [Mythos](https://github.com/unitreign/mythos) — a simple web novel library for KOReader. Browse, track and export your favourite stories as EPUBs to read offline.
 
 ## Adding this repo to Mythos
 

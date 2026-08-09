@@ -14,7 +14,7 @@ All available extensions are listed in [index.json](index.json).
 
 ## Writing an extension
 
-Check the [docs](docs/) folder. Start with [1-getting-started.md](docs/1-getting-started.md), then [2-api-reference.md](docs/2-api-reference.md) for the full method signatures.
+Check the [docs](docs/) folder. 
 
 The `extensions/novelfire.lua` file is a working reference you can read alongside the docs.
 

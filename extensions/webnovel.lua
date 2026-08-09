@@ -203,14 +203,23 @@ end
 -- ── Shared novel metadata extractor ──────────────────────────────────────────
 
 local function parse_meta(html)
-    -- Title: img.g_thumb alt attribute
-    local title = html:match('<img[^>]*class="[^"]*g_thumb[^"]*"[^>]*alt="([^"]+)"')
+    -- Title: try og:title first (most reliable), then g_thumb alt, then h1, then <title>
+    local title = html:match('<meta[^>]*property="og:title"[^>]*content="([^"]+)"')
+               or html:match('<meta[^>]*content="([^"]+)"[^>]*property="og:title"')
+               or html:match('<img[^>]*class="[^"]*g_thumb[^"]*"[^>]*alt="([^"]+)"')
                or html:match('<img[^>]*alt="([^"]+)"[^>]*class="[^"]*g_thumb[^"]*"')
+               or html:match('<h1[^>]*>([^<]+)</h1>')
+               or html:match('<title>([^<|]+)')
                or ""
+    title = strip_tags(title):match("^%s*(.-)%s*$")
 
-    -- Cover: img.g_thumb src (protocol-relative → prepend https:)
-    local cover = html:match('<img[^>]*class="[^"]*g_thumb[^"]*"[^>]*src="([^"]+)"')
+    -- Cover: try data-src (lazy-load) before src, then og:image
+    local cover = html:match('<img[^>]*class="[^"]*g_thumb[^"]*"[^>]*data%-src="([^"]+)"')
+               or html:match('<img[^>]*data%-src="([^"]+)"[^>]*class="[^"]*g_thumb[^"]*"')
+               or html:match('<img[^>]*class="[^"]*g_thumb[^"]*"[^>]*src="([^"]+)"')
                or html:match('<img[^>]*src="([^"]+)"[^>]*class="[^"]*g_thumb[^"]*"')
+               or html:match('<meta[^>]*property="og:image"[^>]*content="([^"]+)"')
+               or html:match('<meta[^>]*content="([^"]+)"[^>]*property="og:image"')
     if cover and not cover:match("^https?:") then
         cover = "https:" .. cover
     end
@@ -281,7 +290,7 @@ local ext = {
     name    = "WebNovel",
     site    = BASE,
     lang    = "en",
-    version = "1.0.0",
+    version = "1.1.0",
 }
 
 function ext:popularNovels(page, options)

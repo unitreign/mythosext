@@ -20,7 +20,7 @@
   {
     "id": "webnovel",
     "name": "WebNovel",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "lang": "en",
     "site": "https://www.webnovel.com",
     "description": "Browse and export novels from WebNovel",

@@ -25,14 +25,5 @@
     "site": "https://www.webnovel.com",
     "description": "Browse and export novels from WebNovel",
     "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/webnovel.lua"
-  },
-  {
-    "id": "ao3",
-    "name": "Archive of Our Own",
-    "version": "1.0.0",
-    "lang": "multi",
-    "site": "https://archiveofourown.org",
-    "description": "Browse and export fan fiction from Archive of Our Own",
-    "url": "https://raw.githubusercontent.com/unitreign/mythosext/refs/heads/main/extensions/ao3.lua"
   }
 ]

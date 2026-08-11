@@ -68,7 +68,7 @@ end
 return ext
 ```
 
-`popularNovels`, `searchNovels`, `parseNovel`, and `parseChapter` are required. Everything else is optional and described in [api-reference.md](api-reference.md).
+`popularNovels`, `searchNovels`, `parseNovel`, and `parseChapter` are required. Everything else is optional and described in [2-api-reference.md](2-api-reference.md).
 
 ## What to read next
 
